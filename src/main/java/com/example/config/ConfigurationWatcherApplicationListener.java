@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import static org.glassfish.jersey.server.monitoring.ApplicationEvent.Type.DESTROY_FINISHED;
 import static org.glassfish.jersey.server.monitoring.ApplicationEvent.Type.INITIALIZATION_START;
 
+
 /**
  * @author Paul Samsotha.
  */

@@ -41,5 +41,4 @@ public class ConfigurationService implements ConfigurationChangeListener {
     public List<String> getDisabledEndpoints() {
         return this.disabledEndpoints.get();
     }
-
 }

@@ -52,16 +52,13 @@ public class ConfigurationWatcher {
                         break;
                     }
                     key = this.watch.take();
-                    // if (key != null) {
-                        key.pollEvents().stream().forEach(event -> {
-                            if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY) {
-                                final Configuration configuration = extractConfiguration(event);
-                                handleChangeDetected(configuration);
-                            }
-                        });
-                        key.reset();
-                   // }
-
+                    key.pollEvents().stream().forEach(event -> {
+                        if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY) {
+                            final Configuration configuration = extractConfiguration(event);
+                            handleChangeDetected(configuration);
+                        }
+                    });
+                    key.reset();
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
