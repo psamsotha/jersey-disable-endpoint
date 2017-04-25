@@ -25,7 +25,7 @@ public class ConfigurationService implements ConfigurationChangeListener {
             final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             final Configuration config = mapper.readValue(new File("config/app.yml"), Configuration.class);
             this.logger.info("initial config: " + config);
-            this.disabledEndpoints = new AtomicReference<>(config.getDisabledEndpoints());
+            this.disabledEndpoints = new AtomicReference<>(Collections.unmodifiableList(config.getDisabledEndpoints()));
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
