@@ -2,7 +2,7 @@ Example of Disabling and Enabling Endpoints an Runtime
 ======================================================
 
 This is a POC based on the Stack Overflow question
-[Need Jersey2 technique to enable or disable services during runtime][2].
+[Need Jersey2 technique to enable or disable services during runtime][1].
 
 To handle this requirement, a Jersey [Prematching filter][2] is used to determine
 if endpoints are disabled, with the use of a helper service. The service will
@@ -37,8 +37,8 @@ curl -i http://localhost:8080/api/tigers       200
 curl -i http://localhost:8080/api/lions        404
 ```
 
-Now uncomment the Tigers and Bears endpoints, and comment the Lions endpoint.
-If you make the same request again you should now see the results are reversed.
+Now uncomment the Tigers and Bears endpoints, and comment the Lions endpoint. Then save.
+If you make the same requests again you should now see the results are reversed.
 
 ### Note
 
